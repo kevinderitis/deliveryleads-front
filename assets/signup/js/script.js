@@ -1,0 +1,49 @@
+
+let loginForm = document.querySelector(".my-form");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let confirmPassword = document.getElementById("confirm-password");
+
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    console.log('Email:', email.value);
+    console.log('Password:', password.value);
+
+    const formData = {
+        email: email.value,
+        password: password.value
+    };
+
+    try {
+        const response = await fetch(`${API_URL}/auth/signup`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            window.location.href = 'login.html';
+        } else {
+            alert('Error al registrar usuario');
+            throw new Error('Error en la solicitud al servidor');
+        }
+    } catch (error) {
+        console.error('Error al enviar la solicitud:', error.message);
+    }
+});
+
+function onChange() {
+    if (confirmPassword.value === password.value) {
+        confirmPassword.setCustomValidity('');
+    } else {
+        confirmPassword.setCustomValidity('Las contraseñas no son iguales');
+    }
+}
+
+password.addEventListener('change', onChange);
+confirmPassword.addEventListener('change', onChange);
+
+

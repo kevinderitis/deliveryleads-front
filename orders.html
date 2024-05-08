@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/tablelist/css/style.css">
+</head>
+<body>
+    <div class="table-widget">
+        <table>
+            <caption>
+                Orders
+                <span class="table-row-count"></span>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Email address</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody id="order-rows">
+                <!-- Rows will be generated dynamically -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <ul class="pagination">
+                            <!-- Pagination links will be generated dynamically -->
+                        </ul>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="js/constants.js"></script>
+    <script src="assets/tablelist/js/orders.js"></script>
+</body>
+</html>

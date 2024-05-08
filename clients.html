@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/tablelist/css/style.css">
+</head>
+<body>
+<div class="table-widget">
+    <table>
+        <caption>
+            Client List
+            <span class="table-row-count"></span>
+        </caption>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody id="client-rows">
+        <!-- Rows will be generated here -->
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">
+                <ul class="pagination">
+                    <!-- Pagination links will be generated here -->
+                </ul>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<script src="js/constants.js"></script>
+<script src="assets/tablelist/js/clients.js"></script>
+</body>
+</html>
